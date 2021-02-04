@@ -7,7 +7,7 @@ export declare type Props = {
     containerStyle: ViewStyle;
     duration: number;
     fadeOutDelay?: number;
-    isFullScreen: boolean;
+    isFullScreen?: boolean;
     isLoading: boolean;
     mainColor: string;
     onFullScreen?: (event: GestureResponderEvent) => void;
