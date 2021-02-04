@@ -28,11 +28,11 @@
   "scripts": {
     "start": "tsdx watch",
     "dev": "tsdx watch --localDev",
-    "build": "tsdx build",
-    "test": "tsdx test --passWithNoTests",
-    "lint": "tsdx lint",
+    "build": "npx tsdx build",
+    "test": "npx tsdx test --passWithNoTests",
+    "lint": "npx tsdx lint",
     "prepare": "tsdx build",
-    "install": "tsdx build"
+    "install": "npm run build"
   },
   "peerDependencies": {
     "react": ">=16",
