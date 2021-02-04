@@ -31,8 +31,7 @@
     "build": "npx tsdx build",
     "test": "npx tsdx test --passWithNoTests",
     "lint": "npx tsdx lint",
-    "prepare": "tsdx build",
-    "postinstall": "npm run build"
+    "prepare": "tsdx build"
   },
   "peerDependencies": {
     "react": ">=16",
