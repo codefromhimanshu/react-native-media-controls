@@ -32,7 +32,6 @@
     "test": "npx tsdx test --passWithNoTests",
     "lint": "npx tsdx lint",
     "prepare": "tsdx build",
-    "prebuild": "npm run build",
     "postinstall": "npm run build"
   },
   "peerDependencies": {
