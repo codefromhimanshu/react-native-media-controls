@@ -34,8 +34,8 @@ export default StyleSheet.create({
   playButton: {
     alignItems: "center",
     borderColor: playButtonBorderColor,
-    borderRadius: 3,
-    borderWidth: 1.5,
+    borderRadius: 100,
+    borderWidth: 0,
     height: 50,
     justifyContent: "center",
     width: 50,
@@ -44,8 +44,6 @@ export default StyleSheet.create({
     height: 22,
     resizeMode: "contain",
     width: 22,
-    borderRadius: 100,
-    borderWidth: 0,
   },
   progressColumnContainer: {
     flex: 1,
