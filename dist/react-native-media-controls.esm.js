@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { StyleSheet, ActivityIndicator, TouchableOpacity, Image, View, Text, Animated, TouchableWithoutFeedback } from 'react-native';
 import RNSlider from 'react-native-slider';
 
-var containerBackgroundColor = "rgba(45, 59, 62, 0.4)";
+var containerBackgroundColor = "rgba(45, 59, 62, 0)";
 var playButtonBorderColor = "rgba(255,255,255,0.5)";
 var white = "#fff";
 var styles = /*#__PURE__*/StyleSheet.create({
@@ -35,8 +35,8 @@ var styles = /*#__PURE__*/StyleSheet.create({
   playButton: {
     alignItems: "center",
     borderColor: playButtonBorderColor,
-    borderRadius: 3,
-    borderWidth: 1.5,
+    borderRadius: 100,
+    borderWidth: 0,
     height: 50,
     justifyContent: "center",
     width: 50
