@@ -44,6 +44,8 @@ export default StyleSheet.create({
     height: 22,
     resizeMode: "contain",
     width: 22,
+    borderRadius: 100,
+    borderWidth: 0,
   },
   progressColumnContainer: {
     flex: 1,
