@@ -48,6 +48,11 @@ var styles = /*#__PURE__*/reactNative.StyleSheet.create({
     justifyContent: "center",
     width: 50
   },
+  muteIcon: {
+    height: 22,
+    resizeMode: "contain",
+    width: 22
+  },
   playIcon: {
     height: 22,
     resizeMode: "contain",
@@ -227,6 +232,24 @@ var Toolbar = function Toolbar(_ref) {
   return React__default.createElement(React__default.Fragment, null, children);
 };
 
+var VolumeControls = function VolumeControls(props) {
+  var onMute = props.onMute,
+      mute = props.mute;
+  var icon = mute ? require("./assets/mute.png") : require("./assets/unmute.png");
+  var content = React__default.createElement(reactNative.TouchableOpacity, {
+    style: [styles.playButton],
+    onPress: onMute,
+    accessibilityLabel: !mute ? "Tap to mute" : "Tap to unmute",
+    accessibilityHint: "Mute & unmute the Video"
+  }, React__default.createElement(reactNative.Image, {
+    source: icon,
+    style: styles.muteIcon
+  }));
+  return React__default.createElement(reactNative.View, {
+    style: [styles.controlsRow]
+  }, content);
+};
+
 var MediaControls = function MediaControls(props) {
   var children = props.children,
       _props$containerStyle = props.containerStyle,
@@ -248,7 +271,9 @@ var MediaControls = function MediaControls(props) {
       showOnStart = _props$showOnStart === void 0 ? true : _props$showOnStart,
       sliderStyle = props.sliderStyle,
       _props$toolbarStyle = props.toolbarStyle,
-      customToolbarStyle = _props$toolbarStyle === void 0 ? {} : _props$toolbarStyle;
+      customToolbarStyle = _props$toolbarStyle === void 0 ? {} : _props$toolbarStyle,
+      onMute = props.onMute,
+      mute = props.mute;
 
   var _ref = function () {
     if (showOnStart) {
@@ -369,7 +394,10 @@ var MediaControls = function MediaControls(props) {
     style: [styles.container, customContainerStyle]
   }, React__default.createElement(reactNative.View, {
     style: [styles.controlsRow, styles.toolbarRow, customToolbarStyle]
-  }, children), React__default.createElement(Controls, {
+  }, children), React__default.createElement(VolumeControls, {
+    mute: mute,
+    onMute: onMute
+  }), React__default.createElement(Controls, {
     onPause: onPause,
     onReplay: onReplay,
     isLoading: isLoading,

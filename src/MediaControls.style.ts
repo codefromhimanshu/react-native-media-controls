@@ -40,6 +40,11 @@ export default StyleSheet.create({
     justifyContent: "center",
     width: 50,
   },
+  muteIcon: {
+    height: 22,
+    resizeMode: "contain",
+    width: 22,
+  },
   playIcon: {
     height: 22,
     resizeMode: "contain",

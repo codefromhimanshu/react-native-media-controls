@@ -11,6 +11,7 @@ import { PLAYER_STATES } from "./constants/playerStates";
 import { Controls } from "./Controls";
 import { Slider, CustomSliderStyle } from "./Slider";
 import { Toolbar } from "./Toolbar";
+import { VolumeControls } from "./VolumeControls";
 
 export type Props = {
   children: React.ReactNode;
@@ -30,6 +31,8 @@ export type Props = {
   showOnStart?: boolean;
   sliderStyle: CustomSliderStyle;
   toolbarStyle: ViewStyle;
+  onMute: () => void;
+  mute: boolean;
 };
 
 const MediaControls = (props: Props) => {
@@ -49,6 +52,8 @@ const MediaControls = (props: Props) => {
     showOnStart = true,
     sliderStyle, // defaults are applied in Slider.tsx
     toolbarStyle: customToolbarStyle = {},
+    onMute,
+    mute,
   } = props;
   const { initialOpacity, initialIsVisible } = (() => {
     if (showOnStart) {
@@ -150,6 +155,7 @@ const MediaControls = (props: Props) => {
             >
               {children}
             </View>
+            <VolumeControls mute={mute} onMute={onMute} />
             <Controls
               onPause={onPause}
               onReplay={onReplay}

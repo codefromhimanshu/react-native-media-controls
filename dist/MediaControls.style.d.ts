@@ -34,6 +34,11 @@ declare const _default: {
         justifyContent: "center";
         width: number;
     };
+    muteIcon: {
+        height: number;
+        resizeMode: "contain";
+        width: number;
+    };
     playIcon: {
         height: number;
         resizeMode: "contain";

@@ -20,6 +20,8 @@ export declare type Props = {
     showOnStart?: boolean;
     sliderStyle: CustomSliderStyle;
     toolbarStyle: ViewStyle;
+    onMute: () => void;
+    mute: boolean;
 };
 declare const MediaControls: {
     (props: Props): JSX.Element;
