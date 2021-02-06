@@ -37,7 +37,6 @@ export type Props = {
 
 const MediaControls = (props: Props) => {
   const {
-    children,
     containerStyle: customContainerStyle = {},
     duration,
     fadeOutDelay = 5000,
@@ -51,7 +50,6 @@ const MediaControls = (props: Props) => {
     progress,
     showOnStart = true,
     sliderStyle, // defaults are applied in Slider.tsx
-    toolbarStyle: customToolbarStyle = {},
     onMute,
     mute,
   } = props;
@@ -145,36 +143,43 @@ const MediaControls = (props: Props) => {
     <TouchableWithoutFeedback accessible={false} onPress={toggleControls}>
       <Animated.View style={[styles.container, { opacity }]}>
         {isVisible && (
-          <View style={[styles.container, customContainerStyle]}>
-            <View
-              style={[
-                styles.controlsRow,
-                styles.toolbarRow,
-                customToolbarStyle,
-              ]}
-            >
-              {children}
+          <>
+            <View style={[styles.container, customContainerStyle]}>
+              <VolumeControls
+                mute={mute}
+                mainColor={mainColor}
+                onMute={onMute}
+              />
+              {/* <View
+                style={[
+                  styles.controlsRow,
+                  styles.toolbarRow,
+                  customToolbarStyle,
+                ]}
+              >
+                {children}
+              </View>
+              */}
+              <Controls
+                onPause={onPause}
+                onReplay={onReplay}
+                isLoading={isLoading}
+                mainColor={mainColor}
+                playerState={playerState}
+              />
+              <Slider
+                progress={progress}
+                duration={duration}
+                mainColor={mainColor}
+                onFullScreen={onFullScreen}
+                playerState={playerState}
+                onSeek={onSeek}
+                onSeeking={onSeeking}
+                onPause={onPause}
+                customSliderStyle={sliderStyle}
+              />
             </View>
-            <VolumeControls mute={mute} onMute={onMute} />
-            <Controls
-              onPause={onPause}
-              onReplay={onReplay}
-              isLoading={isLoading}
-              mainColor={mainColor}
-              playerState={playerState}
-            />
-            <Slider
-              progress={progress}
-              duration={duration}
-              mainColor={mainColor}
-              onFullScreen={onFullScreen}
-              playerState={playerState}
-              onSeek={onSeek}
-              onSeeking={onSeeking}
-              onPause={onPause}
-              customSliderStyle={sliderStyle}
-            />
-          </View>
+          </>
         )}
       </Animated.View>
     </TouchableWithoutFeedback>

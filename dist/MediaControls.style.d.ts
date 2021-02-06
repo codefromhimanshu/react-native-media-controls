@@ -8,7 +8,7 @@ declare const _default: {
         justifyContent: "space-between";
         left: number;
         paddingHorizontal: number;
-        paddingVertical: number;
+        paddingBottom: number;
         position: "absolute";
         right: number;
         top: number;
@@ -33,6 +33,12 @@ declare const _default: {
         height: number;
         justifyContent: "center";
         width: number;
+    };
+    muteControlsRow: {
+        alignItems: "center";
+        flex: number;
+        alignSelf: "flex-end";
+        justifyContent: "flex-end";
     };
     muteIcon: {
         height: number;

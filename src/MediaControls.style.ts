@@ -14,7 +14,7 @@ export default StyleSheet.create({
     justifyContent: "space-between",
     left: 0,
     paddingHorizontal: 20,
-    paddingVertical: 13,
+    paddingBottom: 13,
     position: "absolute",
     right: 0,
     top: 0,
@@ -40,10 +40,16 @@ export default StyleSheet.create({
     justifyContent: "center",
     width: 50,
   },
+  muteControlsRow: {
+    alignItems: "center",
+    flex: 1,
+    alignSelf: "flex-end",
+    justifyContent: "flex-end",
+  },
   muteIcon: {
-    height: 22,
+    height: 46,
     resizeMode: "contain",
-    width: 22,
+    width: 46,
   },
   playIcon: {
     height: 22,

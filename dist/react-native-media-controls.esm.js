@@ -15,7 +15,7 @@ var styles = /*#__PURE__*/StyleSheet.create({
     justifyContent: "space-between",
     left: 0,
     paddingHorizontal: 20,
-    paddingVertical: 13,
+    paddingBottom: 13,
     position: "absolute",
     right: 0,
     top: 0
@@ -41,10 +41,16 @@ var styles = /*#__PURE__*/StyleSheet.create({
     justifyContent: "center",
     width: 50
   },
+  muteControlsRow: {
+    alignItems: "center",
+    flex: 1,
+    alignSelf: "flex-end",
+    justifyContent: "flex-end"
+  },
   muteIcon: {
-    height: 22,
+    height: 46,
     resizeMode: "contain",
-    width: 22
+    width: 46
   },
   playIcon: {
     height: 22,
@@ -241,13 +247,12 @@ var VolumeControls = function VolumeControls(props) {
     style: styles.muteIcon
   }));
   return React.createElement(View, {
-    style: [styles.controlsRow]
+    style: [styles.muteControlsRow]
   }, content);
 };
 
 var MediaControls = function MediaControls(props) {
-  var children = props.children,
-      _props$containerStyle = props.containerStyle,
+  var _props$containerStyle = props.containerStyle,
       customContainerStyle = _props$containerStyle === void 0 ? {} : _props$containerStyle,
       duration = props.duration,
       _props$fadeOutDelay = props.fadeOutDelay,
@@ -265,8 +270,6 @@ var MediaControls = function MediaControls(props) {
       _props$showOnStart = props.showOnStart,
       showOnStart = _props$showOnStart === void 0 ? true : _props$showOnStart,
       sliderStyle = props.sliderStyle,
-      _props$toolbarStyle = props.toolbarStyle,
-      customToolbarStyle = _props$toolbarStyle === void 0 ? {} : _props$toolbarStyle,
       onMute = props.onMute,
       mute = props.mute;
 
@@ -385,12 +388,11 @@ var MediaControls = function MediaControls(props) {
     style: [styles.container, {
       opacity: opacity
     }]
-  }, isVisible && React.createElement(View, {
+  }, isVisible && React.createElement(React.Fragment, null, React.createElement(View, {
     style: [styles.container, customContainerStyle]
-  }, React.createElement(View, {
-    style: [styles.controlsRow, styles.toolbarRow, customToolbarStyle]
-  }, children), React.createElement(VolumeControls, {
+  }, React.createElement(VolumeControls, {
     mute: mute,
+    mainColor: mainColor,
     onMute: onMute
   }), React.createElement(Controls, {
     onPause: onPause,
@@ -408,7 +410,7 @@ var MediaControls = function MediaControls(props) {
     onSeeking: onSeeking,
     onPause: onPause,
     customSliderStyle: sliderStyle
-  }))));
+  })))));
 };
 
 MediaControls.Toolbar = Toolbar;

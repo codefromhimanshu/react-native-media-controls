@@ -3,7 +3,7 @@ import { TouchableOpacity, View, Image } from "react-native";
 import styles from "./MediaControls.style";
 import { Props } from "./MediaControls";
 
-type VolumeControlsProps = Pick<Props, "onMute" | "mute"> & {};
+type VolumeControlsProps = Pick<Props, "onMute" | "mainColor" | "mute"> & {};
 
 const VolumeControls = (props: VolumeControlsProps) => {
   const { onMute, mute } = props;
@@ -21,7 +21,7 @@ const VolumeControls = (props: VolumeControlsProps) => {
     </TouchableOpacity>
   );
 
-  return <View style={[styles.controlsRow]}>{content}</View>;
+  return <View style={[styles.muteControlsRow]}>{content}</View>;
 };
 
 export { VolumeControls };
