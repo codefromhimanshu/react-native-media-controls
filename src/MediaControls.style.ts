@@ -19,6 +19,16 @@ export default StyleSheet.create({
     right: 0,
     top: 0,
   },
+  volumeContainer: {
+    backgroundColor: containerBackgroundColor,
+    paddingHorizontal: 20,
+    paddingBottom: 13,
+    position: "absolute",
+    right: 0,
+    top: 20,
+    height: 50,
+    width: 50,
+  },
   controlsRow: {
     alignItems: "center",
     alignSelf: "stretch",

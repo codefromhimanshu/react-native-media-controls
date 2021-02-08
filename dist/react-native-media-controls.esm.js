@@ -20,6 +20,16 @@ var styles = /*#__PURE__*/StyleSheet.create({
     right: 0,
     top: 0
   },
+  volumeContainer: {
+    backgroundColor: containerBackgroundColor,
+    paddingHorizontal: 20,
+    paddingBottom: 13,
+    position: "absolute",
+    right: 0,
+    top: 20,
+    height: 50,
+    width: 50
+  },
   controlsRow: {
     alignItems: "center",
     alignSelf: "stretch",
@@ -384,13 +394,13 @@ var MediaControls = function MediaControls(props) {
   return React.createElement(TouchableWithoutFeedback, {
     accessible: false,
     onPress: toggleControls
-  }, React.createElement(Animated.View, {
+  }, React.createElement(React.Fragment, null, React.createElement(Animated.View, {
     style: [styles.container, {
       opacity: opacity
     }]
-  }, isVisible && React.createElement(React.Fragment, null, React.createElement(View, {
+  }, React.createElement(View, {
     style: [styles.container, customContainerStyle]
-  }, React.createElement(VolumeControls, {
+  }, isVisible && React.createElement(React.Fragment, null, React.createElement(VolumeControls, {
     mute: mute,
     mainColor: mainColor,
     onMute: onMute
@@ -410,11 +420,11 @@ var MediaControls = function MediaControls(props) {
     onSeeking: onSeeking,
     onPause: onPause,
     customSliderStyle: sliderStyle
-  })))));
+  }))))));
 };
 
 MediaControls.Toolbar = Toolbar;
 
 export default MediaControls;
-export { PLAYER_STATES };
+export { Controls, PLAYER_STATES };
 //# sourceMappingURL=react-native-media-controls.esm.js.map

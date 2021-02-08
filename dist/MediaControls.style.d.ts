@@ -13,6 +13,16 @@ declare const _default: {
         right: number;
         top: number;
     };
+    volumeContainer: {
+        backgroundColor: string;
+        paddingHorizontal: number;
+        paddingBottom: number;
+        position: "absolute";
+        right: number;
+        top: number;
+        height: number;
+        width: number;
+    };
     controlsRow: {
         alignItems: "center";
         alignSelf: "stretch";

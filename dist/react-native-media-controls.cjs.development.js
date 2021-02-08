@@ -27,6 +27,16 @@ var styles = /*#__PURE__*/reactNative.StyleSheet.create({
     right: 0,
     top: 0
   },
+  volumeContainer: {
+    backgroundColor: containerBackgroundColor,
+    paddingHorizontal: 20,
+    paddingBottom: 13,
+    position: "absolute",
+    right: 0,
+    top: 20,
+    height: 50,
+    width: 50
+  },
   controlsRow: {
     alignItems: "center",
     alignSelf: "stretch",
@@ -389,13 +399,13 @@ var MediaControls = function MediaControls(props) {
   return React__default.createElement(reactNative.TouchableWithoutFeedback, {
     accessible: false,
     onPress: toggleControls
-  }, React__default.createElement(reactNative.Animated.View, {
+  }, React__default.createElement(React__default.Fragment, null, React__default.createElement(reactNative.Animated.View, {
     style: [styles.container, {
       opacity: opacity
     }]
-  }, isVisible && React__default.createElement(React__default.Fragment, null, React__default.createElement(reactNative.View, {
+  }, React__default.createElement(reactNative.View, {
     style: [styles.container, customContainerStyle]
-  }, React__default.createElement(VolumeControls, {
+  }, isVisible && React__default.createElement(React__default.Fragment, null, React__default.createElement(VolumeControls, {
     mute: mute,
     mainColor: mainColor,
     onMute: onMute
@@ -415,10 +425,11 @@ var MediaControls = function MediaControls(props) {
     onSeeking: onSeeking,
     onPause: onPause,
     customSliderStyle: sliderStyle
-  })))));
+  }))))));
 };
 
 MediaControls.Toolbar = Toolbar;
 
+exports.Controls = Controls;
 exports.default = MediaControls;
 //# sourceMappingURL=react-native-media-controls.cjs.development.js.map
