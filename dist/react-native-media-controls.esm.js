@@ -308,7 +308,7 @@ var MediaControls = function MediaControls(props) {
 
   useEffect(function () {
     fadeOutControls(fadeOutDelay);
-  }, []);
+  }, [fadeOutDelay]);
 
   var fadeOutControls = function fadeOutControls(delay) {
     if (delay === void 0) {
@@ -391,13 +391,13 @@ var MediaControls = function MediaControls(props) {
     });
   };
 
-  return React.createElement(TouchableWithoutFeedback, {
-    accessible: false,
-    onPress: toggleControls
-  }, React.createElement(React.Fragment, null, React.createElement(Animated.View, {
+  return React.createElement(React.Fragment, null, React.createElement(Animated.View, {
     style: [styles.container, {
       opacity: opacity
     }]
+  }, React.createElement(TouchableWithoutFeedback, {
+    accessible: false,
+    onPress: toggleControls
   }, React.createElement(View, {
     style: [styles.container, customContainerStyle]
   }, isVisible && React.createElement(React.Fragment, null, React.createElement(VolumeControls, {

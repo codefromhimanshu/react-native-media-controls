@@ -72,7 +72,7 @@ const MediaControls = (props: Props) => {
 
   useEffect(() => {
     fadeOutControls(fadeOutDelay);
-  }, []);
+  }, [fadeOutDelay]);
 
   const fadeOutControls = (delay = 0) => {
     Animated.timing(opacity, {
@@ -140,16 +140,16 @@ const MediaControls = (props: Props) => {
   };
 
   return (
-    <TouchableWithoutFeedback accessible={false} onPress={toggleControls}>
-      <>
-        {/* <View style={[styles.volumeContainer, customContainerStyle]}>
+    <>
+      {/* <View style={[styles.volumeContainer, customContainerStyle]}>
         <VolumeControls
           mute={mute}
           mainColor={mainColor}
           onMute={onMute}
         />
       </View> */}
-        <Animated.View style={[styles.container, { opacity }]}>
+      <Animated.View style={[styles.container, { opacity }]}>
+        <TouchableWithoutFeedback accessible={false} onPress={toggleControls}>
           <View style={[styles.container, customContainerStyle]}>
             {isVisible && (
               <>
@@ -179,9 +179,9 @@ const MediaControls = (props: Props) => {
               </>
             )}
           </View>
-        </Animated.View>
-      </>
-    </TouchableWithoutFeedback>
+        </TouchableWithoutFeedback>
+      </Animated.View>
+    </>
   );
 };
 

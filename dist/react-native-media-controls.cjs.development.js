@@ -313,7 +313,7 @@ var MediaControls = function MediaControls(props) {
 
   React.useEffect(function () {
     fadeOutControls(fadeOutDelay);
-  }, []);
+  }, [fadeOutDelay]);
 
   var fadeOutControls = function fadeOutControls(delay) {
     if (delay === void 0) {
@@ -396,13 +396,13 @@ var MediaControls = function MediaControls(props) {
     });
   };
 
-  return React__default.createElement(reactNative.TouchableWithoutFeedback, {
-    accessible: false,
-    onPress: toggleControls
-  }, React__default.createElement(React__default.Fragment, null, React__default.createElement(reactNative.Animated.View, {
+  return React__default.createElement(React__default.Fragment, null, React__default.createElement(reactNative.Animated.View, {
     style: [styles.container, {
       opacity: opacity
     }]
+  }, React__default.createElement(reactNative.TouchableWithoutFeedback, {
+    accessible: false,
+    onPress: toggleControls
   }, React__default.createElement(reactNative.View, {
     style: [styles.container, customContainerStyle]
   }, isVisible && React__default.createElement(React__default.Fragment, null, React__default.createElement(VolumeControls, {
