@@ -30,8 +30,7 @@
     "dev": "tsdx watch --localDev",
     "build": "npx tsdx build",
     "test": "npx tsdx test --passWithNoTests",
-    "lint": "npx tsdx lint",
-    "prepare": "tsdx build"
+    "lint": "npx tsdx lint"
   },
   "peerDependencies": {
     "react": ">=16",
